@@ -2,7 +2,7 @@
 
 2. Cada mòdul ha de tenir la seva estructura (carpeta amb el VHDL i XML corresponent).
 
-3. Time scale
+3. Time scale                                                       -------- Partially done
 
 4. Treure conexions al exterior.
 
