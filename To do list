@@ -1,0 +1,15 @@
+1. Afegir l'opció de modificar els valors dels paràmetres.
+
+2. Cada mòdul ha de tenir la seva estructura (carpeta amb el VHDL i XML corresponent).
+
+3. Time scale
+
+4. Treure conexions al exterior.
+
+5. Afegir l'opció de conectar múltiples ports.
+
+6. Donar la possibilitat d'afegir ports a un mòdul.
+
+7. Poder modificar el nom del fitxer i poder llegir el fitxer que l'usuari esculli.
+
+8. Llegir conexions ja fetes d'un XML.
