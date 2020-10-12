@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:xsi="http://
+www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.accellera.org/XMLSchema/
+IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+ <ipxact:vendor>accellera.org</ipxact:vendor>
+ <ipxact:library>i2s</ipxact:library>
+ <ipxact:name>transmitter_is_master_rtl</ipxact:name>
+ <ipxact:version>1.0</ipxact:version>
+ <ipxact:componentInstances>
+ <ipxact:componentInstance>
+ <ipxact:instanceName>u_master_transmitter</ipxact:instanceName>
+ <ipxact:componentRef vendor="accellera.org" library="i2s" name="master_transmitter"
+ version="1.0"/>
+ </ipxact:componentInstance>
+ <ipxact:componentInstance>
+ <ipxact:instanceName>u_slave_receiver</ipxact:instanceName>
+ <ipxact:componentRef vendor="accellera.org" library="i2s" name="slave_receiver" version="1.0"/>
+ </ipxact:componentInstance>
+ </ipxact:componentInstances>
+ <ipxact:adHocConnections>
+ <ipxact:adHocConnection>
+ <ipxact:name>u_master_transmitter_sck_u_slave_receiver_sck</ipxact:name>
+ <ipxact:portReferences>
+ <ipxact:internalPortReference componentRef="u_master_transmitter" portRef="sck"/>
+ <ipxact:internalPortReference componentRef="u_slave_receiver" portRef="sck"/>
+ </ipxact:portReferences>
+ </ipxact:adHocConnection>
+ <ipxact:adHocConnection>
+ <ipxact:name>u_master_transmitter_ws_u_slave_receiver_ws</ipxact:name>
+ <ipxact:portReferences>
+ <ipxact:internalPortReference componentRef="u_master_transmitter" portRef="ws"/>
+ <ipxact:internalPortReference componentRef="u_slave_receiver" portRef="ws"/>
+ </ipxact:portReferences>
+ </ipxact:adHocConnection>
+ <ipxact:adHocConnection>
+ <ipxact:name>u_master_transmitter_sd_u_slave_receiver_sd</ipxact:name>
+ <ipxact:portReferences>
+ <ipxact:internalPortReference componentRef="u_master_transmitter" portRef="sd"/>
+ <ipxact:internalPortReference componentRef="u_slave_receiver" portRef="sd"/>
+ </ipxact:portReferences>
+ </ipxact:adHocConnection>
+ </ipxact:adHocConnections>
+</ipxact:design>
