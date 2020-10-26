@@ -19,3 +19,9 @@
 10. Guardar les conexions que es generen.
 
 11. Connectar directament elements al crossbar.    ---In process
+
+
+
+
+Pregunta:
+El .aw_id_s_0(aw_id_s_0) (per exemple), quan hi ha varis slaves, com "escala"? Serà de l'estil .aw_id_s_1(aw_id_s_1), .aw_id_s_2(aw_id_s_2)...? O es crea un bus?
