@@ -1,0 +1,35 @@
+`timescale 10ns / 10ns
+
+module topi;
+
+crossbar #(
+	.my_param (0)
+	)
+	u_crossbar (
+	.ws_m_0( ws_m_0_sig ),
+	.sck_m_0( sck_m_0_sig ),
+	.sck_s_0( sck_s_0_sig ),
+	.ws_s_0( ws_s_0_sig ),
+	.sd_s_0( sd_s_0_sig ),
+	.sd_m_0( sd_m_0_sig )
+	);
+
+master_transmitter #(
+	.my_param (0)
+	)
+	u_master_transmitter (
+	.ws( ws_m_0_sig ),
+	.sck( sck_m_0_sig ),
+	.sd( sd_m_0_sig )
+	);
+
+slave_receiver #(
+	.param_second_module (123)
+	)
+	u_slave_receiver (
+	.sck( sck_s_0_sig ),
+	.ws( ws_s_0_sig ),
+	.sd( sd_s_0_sig )
+	);
+
+endmodule;
