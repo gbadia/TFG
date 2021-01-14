@@ -2,9 +2,9 @@
 
 2. Cada mòdul ha de tenir la seva estructura (carpeta amb el Verilog-HDL i XML corresponent).      -------Done
 
-3. Time scale                                                       -------- Partially done
+3. Time scale                                                       --------  done
 
-4. Treure conexions al exterior.
+4. Treure conexions al exterior.   ---Done
 
 5. Donar la possibilitat d'afegir i treure ports a un mòdul.                -------Done
 
