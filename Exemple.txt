@@ -1,0 +1,61 @@
+`timescale 10ns / 10ns
+
+module prova123( 
+input [7:0] ck,
+output [31:0] dataout
+);
+
+wire [1:0] u_master_transmitter_0_crossbar_0_pepito_sig;
+wire  u_slave_receiver_0_crossbar_0_ws_sig;
+wire  u_slave_receiver_0_crossbar_0_sd_sig;
+wire [1:0] u_crossbar_0_master_transmitter_1_aw_id_m_1_sig;
+wire  u_crossbar_0_slave_receiver_1_ws_s_1_sig;
+wire  u_crossbar_0_slave_receiver_1_sd_s_1_sig;
+master_transmitter #(
+	.my_param (0)
+	)
+	u_master_transmitter_0 (
+	.sck( ck ),
+	.sd( dataout ),
+	.pepito( u_master_transmitter_0_crossbar_0_pepito_sig )
+);
+
+slave_receiver #(
+	.param_second_module (123)
+	)
+	u_slave_receiver_0 (
+	.sck( ck ),
+	.ws( u_slave_receiver_0_crossbar_0_ws_sig ),
+	.sd( u_slave_receiver_0_crossbar_0_sd_sig )
+);
+
+crossbar #(
+	.my_param (0)
+	)
+	u_crossbar_0 (
+	.aw_id_m_0( u_master_transmitter_0_crossbar_0_pepito_sig ),
+	.ws_s_0( u_slave_receiver_0_crossbar_0_ws_sig ),
+	.sd_s_0( u_slave_receiver_0_crossbar_0_sd_sig ),
+	.aw_id_m_1( u_crossbar_0_master_transmitter_1_aw_id_m_1_sig ),
+	.ws_s_1( u_crossbar_0_slave_receiver_1_ws_s_1_sig ),
+	.sd_s_1( u_crossbar_0_slave_receiver_1_sd_s_1_sig )
+);
+
+master_transmitter #(
+	.my_param (0)
+	)
+	u_master_transmitter_1 (
+	.sck( ck ),
+	.pepito( u_crossbar_0_master_transmitter_1_aw_id_m_1_sig )
+);
+
+slave_receiver #(
+	.param_second_module (123)
+	)
+	u_slave_receiver_1 (
+	.sck( ck ),
+	.ws( u_crossbar_0_slave_receiver_1_ws_s_1_sig ),
+	.sd( u_crossbar_0_slave_receiver_1_sd_s_1_sig )
+);
+
+endmodule;
